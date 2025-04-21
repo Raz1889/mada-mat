@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>پلتفرم تامین مواد اولیه</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="container">
+    <div class="logos">
+      <img src="images/logo.png" alt="لوگو" class="logo">
+      <img src="images/logo_mada_fa_w.png" alt="لوگو فارسی" class="logo">
+    </div>
+
+    <h1>پلتفرم تأمین مواد اولیه</h1>
+    <p class="tagline">ارتباط مستقیم بین تأمین‌کنندگان و خریداران</p>
+    <p class="description">لطفاً اطلاعات خود را وارد کنید تا فرآیند ثبت‌نام آغاز شود.</p>
+
+    <div id="form-section">
+      <!-- انتخاب استان -->
+      <div class="location-select">
+        <label for="province">استان مورد نظر را انتخاب کنید:</label>
+        <select id="province" name="province">
+          <option value="">همه استان‌ها</option>
+          <option value="tehran">تهران</option>
+          <option value="esfahan">اصفهان</option>
+          <option value="shiraz">شیراز</option>
+          <option value="mashhad">مشهد</option>
+          <option value="tabriz">تبریز</option>
+        </select>
+      </div>
+
+      <!-- انتخاب شهر -->
+      <div class="location-select">
+        <label for="city">شهر مورد نظر را انتخاب کنید:</label>
+        <select id="city" name="city">
+          <option value="">همه شهرها</option>
+          <option value="city1">شهر ۱</option>
+          <option value="city2">شهر ۲</option>
+          <option value="city3">شهر ۳</option>
+        </select>
+      </div>
+
+      <!-- وارد کردن شماره موبایل -->
+      <div class="phone-input">
+        <label for="phone">شماره موبایل:</label>
+        <input type="text" id="phone" name="phone" placeholder="مثال: 09123456789">
+      </div>
+
+      <!-- دکمه ثبت -->
+      <div class="verification">
+        <button id="submit-btn" type="button">ثبت</button>
+      </div>
+    </div>
+
+    <!-- تأیید کد -->
+    <div id="code-section" class="verification" style="display:none;">
+      <label for="code">کد ارسال‌شده را وارد کنید:</label>
+      <input type="text" id="code" placeholder="کد را وارد کنید">
+      <div style="margin-top:10px;">
+        <span id="timer">02:00</span>
+        <button id="verify-btn" type="button">تأیید</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const submitBtn = document.getElementById('submit-btn');
+    const formSection = document.getElementById('form-section');
+    const codeSection = document.getElementById('code-section');
+    const timerSpan = document.getElementById('timer');
+    const verifyBtn = document.getElementById('verify-btn');
+
+    submitBtn.addEventListener('click', () => {
+      formSection.style.display = 'none';
+      codeSection.style.display = 'block';
+
+      // تایمر 2 دقیقه‌ای
+      let timeLeft = 120;
+      const interval = setInterval(() => {
+        let minutes = Math.floor(timeLeft / 60);
+        let seconds = timeLeft % 60;
+        timerSpan.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        timeLeft--;
+        if (timeLeft < 0) clearInterval(interval);
+      }, 1000);
+    });
+
+    verifyBtn.addEventListener('click', () => {
+      window.location.href = 'industries.html';
+    });
+  </script>
+
+</body>
+</html>
