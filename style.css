@@ -1,0 +1,175 @@
+/* فونت و استایل کلی صفحه */
+body {
+  font-family: 'Vazirmatn', sans-serif;
+  text-align: center;
+  padding: 20px;
+  margin: 0;
+  font-size: 18px;
+  background-image: url('images/materials.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  backdrop-filter: blur(5px);
+  color: #fff;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* نمایش دو لوگو کنار هم */
+.logos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+}
+
+.logo {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* عنوان‌ها */
+h1 {
+  font-size: 36px;
+  color: #f3efef;
+}
+
+.tagline {
+  font-size: 24px;
+  color: #f8f2f2;
+}
+
+.description {
+  font-size: 16px;
+  color: #f7f4f4;
+  margin-bottom: 30px;
+}
+
+/* جعبه‌های سفید پشت هر ورودی */
+.selection,
+.location-select,
+.phone-input,
+.verification {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: right;
+  color: #333;
+}
+
+/* استایل برای انتخاب‌گرها و ورودی‌ها */
+input[type="text"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+/* استایل دکمه */
+button {
+  display: block;
+  width: 200px;
+  padding: 12px;
+  margin: 20px auto 0;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #45a049;
+}
+
+/* تایمر تأیید کد */
+#code-section input[type="text"] {
+  margin-top: 10px;
+}
+
+#timer {
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 10px;
+  color: #333;
+}
+
+/* ریسپانسیو برای موبایل */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .logos {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .tagline {
+    font-size: 20px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  button {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  input[type="text"],
+  select {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  .tagline {
+    font-size: 18px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  input[type="text"],
+  select {
+    font-size: 14px;
+  }
+}
+.icon-fallback {
+  display: none;
+  font-size: 14px;
+}
+
+.icon i:not(.fas) + .icon-fallback {
+  display: inline;
+}

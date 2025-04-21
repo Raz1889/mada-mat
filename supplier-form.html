@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>فرم ثبت ماده اولیه / محصول</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap');
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Vazirmatn', sans-serif;
+      direction: rtl;
+      height: 100%;
+      background: url('images/blurred-industrial.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .glass-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      padding: 20px;
+    }
+
+    .glass-container {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      width: 100%;
+      max-width: 700px;
+      max-height: 95vh;
+      overflow-y: auto;
+      padding: 30px 40px;
+    }
+
+    .logo-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo-container img {
+      width: 120px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #222;
+      font-size: 22px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    input, textarea, select {
+      padding: 8px;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: #4caf50;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    @media screen and (max-width: 600px) {
+      .glass-container {
+        padding: 20px;
+      }
+
+      h2 {
+        font-size: 18px;
+      }
+
+      input, textarea {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="glass-wrapper">
+    <div class="glass-container">
+      <div class="logo-container">
+        <img src="logo mada.png" alt="لوگو">
+      </div>
+      <h2>فرم ثبت ماده اولیه / محصول</h2>
+      <form>
+        <label>نام ماده اولیه / محصول</label>
+        <input type="text" required>
+      
+        <label>نام شرکت / برند (اختیاری)</label>
+        <input type="text">
+      
+        <label>نام و نام خانوادگی مسئول</label>
+        <input type="text" required>
+      
+        <label>شماره تماس</label>
+        <input type="text" required>
+      
+        <label>آدرس ایمیل</label>
+        <input type="email" required>
+      
+        <label>واحد اندازه‌گیری</label>
+        <input type="text" placeholder="مثلاً کیلوگرم">
+      
+        <label>حداقل سفارش قابل قبول</label>
+        <input type="text">
+      
+        <label>ظرفیت تأمین ماهانه</label>
+        <input type="text">
+      
+        <label>قیمت پایه (هر واحد)</label>
+        <input type="text">
+      
+        <label>قیمت به تومان</label>
+        <input type="text">
+      
+        <label>مشخصات فنی محصول</label>
+        <textarea rows="3"></textarea>
+      
+        <label>گواهی‌نامه‌ها / استانداردها</label>
+        <textarea rows="2"></textarea>
+      
+        <label>تصویر محصول</label>
+        <input type="file">
+      
+        <label>توضیحات بیشتر</label>
+        <textarea rows="3"></textarea>
+      
+        <button type="submit">ثبت نهایی</button>
+      </form>
+      
+    </div>
+  </div>
+</body>
+</html>
